@@ -2,7 +2,7 @@ export default function Tickets() {
 
     return(
         <main>
-            <h1>Tickets</h1>
+            <h2>Tickets</h2>
         </main>
     )
 }
