@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Logo from "./"
 
 export default function Navbar() {
   return (
