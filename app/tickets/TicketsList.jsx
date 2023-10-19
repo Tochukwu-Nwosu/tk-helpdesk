@@ -21,6 +21,9 @@ export default async function TicketList() {
                     <div className={`pill ${ticket.priority}`}>{ticket.priority} priority</div>
                 </div>
             ))}
+            {tickets.length === 0 && (
+                <p className="text-center">There are no open tickets</p>
+            )}
         </>
     )
 }
