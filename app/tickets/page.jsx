@@ -10,7 +10,7 @@ export default function Tickets() {
                     <p><small>Currently open tickets.</small></p>
                 </div>
             </nav>
-            {/* render TicketsList */}
+            
             <TicketList />
         </main>
     )
