@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 async function getTickets() {
     const res = await fetch('http://localhost:4000/ticket', {
         next: {
@@ -14,13 +16,17 @@ export default async function TicketList() {
 
     return(
         <>
-            {tickets.map(ticket => (
-                <div key={ticket.id} className="card my-8">
-                    <h3>{ticket.title}</h3>
-                    <p>{ticket.body.slice(0, 200)}...</p>
-                    <div className={`pill ${ticket.priority}`}>{ticket.priority} priority</div>
-                </div>
-            ))}
+            {tickets.map(ticket => {
+                return (
+                    <div key={ticket.id} className="card my-8">
+                        <Link href={`tickets/${ticket.id}`}>
+                            <h3>{ticket.title}</h3>
+                            <p>{ticket.body.slice(0, 200)}...</p>
+                            <div className={`pill ${ticket.priority}`}>{ticket.priority} priority</div>
+                        </Link>
+                    </div>
+                )
+            })}
             {tickets.length === 0 && (
                 <p className="text-center">There are no open tickets</p>
             )}
